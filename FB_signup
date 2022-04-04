@@ -1,0 +1,80 @@
+package locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class FacebookSignUp {
+
+
+public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anjali\\Desktop\\Automation Installtion\\chromedriver.exe");
+	
+	WebDriver avg = new ChromeDriver();
+	avg.get("https://www.facebook.com/signup");
+	
+	//xpath by attribute
+	avg.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Ishan");
+	avg.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Malhotra");
+	Thread.sleep(2000);
+	
+	avg.findElement(By.xpath("//input[@aria-label='Mobile number or email address']")).sendKeys("9876543210");
+	avg.findElement(By.xpath("//input[@aria-label='New password']")).sendKeys("Ishan@786");
+	Thread.sleep(2000);
+	
+    WebElement day = avg.findElement(By.xpath("//select[@aria-label='Day']"));
+    Select sel =  new Select(day);
+    sel.selectByIndex(0);
+    Thread.sleep(2000);
+    
+	WebElement month = avg.findElement(By.xpath("//select[@id='month']"));
+	Select Sel1 = new Select(month);
+	Sel1.selectByVisibleText("Dec");
+	Thread.sleep(2000);
+	
+	WebElement year = avg.findElement(By.xpath("//select[@name='birthday_year']"));
+	Select Sel2 = new Select(year);
+	Sel2.selectByIndex(27);
+	Thread.sleep(2000);
+	
+	avg.findElement(By.xpath("//input[@value='2']")).click();
+	Thread.sleep(2000);
+	
+	avg.findElement(By.xpath("//button[@name='websubmit']")).click();
+	Thread.sleep(2000);
+	
+	
+	
+	
+	
+	
+	
+	//path by text
+	//avg.findElement(By.xpath("//a[text()='Terms'][1]")).click();
+	//avg.findElement(By.xpath("//a[text()='Data Policy']")).click();
+	//avg.findElement(By.xpath("//a[text()='Cookie Policy']")).click();
+	//avg.findElement(By.xpath("//a[text()='Sign Up']")).click();
+	//avg.findElement(By.xpath("//a[text()='Log In']")).click();
+	//avg.findElement(By.xpath("//a[text()='Already have an account?']")).click();
+	//avg.findElement(By.xpath("//a[text()='Messenger']")).click();
+	//avg.findElement(By.xpath("//a[text()='Facebook Lite']")).click();
+	//avg.findElement(By.xpath("//a[text()='Watch']")).click();
+	//avg.findElement(By.xpath("//a[text()='Places']")).click();
+	//avg.findElement(By.xpath("//a[text()='Voting Information Centre']")).click();
+	
+	//Xpath by Contains
+	//avg.findElement(By.xpath("//a[contains(text(),'Services')]")).click();
+	//avg.findElement(By.xpath("//a[contains(text(),'Log')]")).click();
+	//avg.findElement(By.xpath("//a[contains(text(),'Already')]")).click();
+	
+	//Xpath by index
+	//avg.findElement(By.xpath("//a[text()='Terms'][1]")).click();
+	
+	
+	
+	
+	
+}
+}
