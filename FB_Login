@@ -1,0 +1,28 @@
+package locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facebooklogin {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anjali\\Desktop\\Automation Installtion\\chromedriver.exe");
+		
+		WebDriver abc = new ChromeDriver();
+		
+		abc.get("https://www.facebook.com/");
+		
+
+		abc.findElement(By.xpath("//input[@name='email']")).sendKeys("Anjali12345");
+		
+	    abc.findElement(By.xpath("//input[@type='password']")).sendKeys("lord@Shiva123");
+		
+		abc.findElement(By.xpath("//button[@value='1']")).click();
+		
+		
+		//abc.findElement(By.xpath("//a[text()='Forgotten password?']")).click();
+		
+		
+	}
+
+}
